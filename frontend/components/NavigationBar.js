@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const NavigationBar = () => {
   return (
-    <Navbar className="nav" variant="light" sticky="top">
+    <Navbar className="nav" variant="dark" sticky="top">
       <Nav className="me-auto">
         <Nav.Link href="/">Home</Nav.Link>
       </Nav>

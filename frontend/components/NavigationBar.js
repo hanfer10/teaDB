@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 
-const NavigationBar = () => {
+export default NavigationBar = () => {
   return (
     <Navbar className="nav" variant="dark" sticky="top">
       <Nav className="me-auto">
@@ -13,4 +13,4 @@ const NavigationBar = () => {
   )
 };
 
-export default NavigationBar;
+

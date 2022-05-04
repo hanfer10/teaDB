@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 
 
-const Home = () => {
+export default Home = () => {
   return (
     <div className='home'>
       <h1>Welcome to teaDB</h1>
@@ -10,4 +10,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+

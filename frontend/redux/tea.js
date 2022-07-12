@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const fetchTea = createAsyncThunk('tea/fetchTea', async (_, _) => {
   const allTea = await axios.get('/api/allTea');
+  console.log(allTea.data);
   return allTea.data;
 })
 

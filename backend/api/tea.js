@@ -6,6 +6,6 @@ router.get('/', async (request, response, next) => {
     const tea = await Tea.findAll();
     response.json(tea);
   } catch (error) {
-    console.error('No tea found')
+    console.error('No tea found');
   }
-})
+});

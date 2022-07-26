@@ -5,9 +5,25 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const [username, setUsername] = useState('');
-  const [passwore, setPassword] = useState('');
+  const [password, setPassword] = useState('');
 
   const user = useSelector(state => state.user.user);
+
+  const onChange = (event) => {
+    const field = event.target.name;
+    const value = event.target.value;
+    if (field == "username") {
+      setUsername(value)
+    } else if (field == "password") {
+      setPassword(value);
+    }
+  }
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    dispatch(await )
+  }
 
   return (
     <form>

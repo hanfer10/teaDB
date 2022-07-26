@@ -27,7 +27,7 @@ root.render(
       <GlobalHeader />
       <Routes>
         <Route path='/' element={<App />}>
-          <Route path="sign_in" element={<Login />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </Provider>

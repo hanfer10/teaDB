@@ -8,6 +8,7 @@ import store from './store';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import GlobalHeader from "./components/GlobalHeader";
+import Login from "./components/Login";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ root.render(
       <GlobalHeader />
       <Routes>
         <Route path='/' element={<App />}>
+          <Route path="sign_in" element={<Login />} />
         </Route>
       </Routes>
     </Provider>

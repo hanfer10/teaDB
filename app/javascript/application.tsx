@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
+import GlobalHeader from "./components/GlobalHeader";
+import SignIn from "./components/SignIn";
+
 const App = () => {
   return (
     <div>
@@ -21,8 +24,10 @@ const root = createRoot(container!);
 root.render(
   <BrowserRouter>
     <Provider store={store}>
+      <GlobalHeader />
       <Routes>
         <Route path='/' element={<App />}>
+          <Route path="/signin" element={<SignIn />} />
         </Route>
       </Routes>
     </Provider>

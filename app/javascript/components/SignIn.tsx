@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const Login = () => {
+const SignIn = () => {
   const dispatch = useDispatch();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const user = useSelector(state => state.user.user);
+  // const user = useSelector(state => state.user.user);
 
   const onChange = (event) => {
     const field = event.target.name;
@@ -19,11 +19,11 @@ const Login = () => {
     }
   }
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  // const onSubmit = async (event) => {
+  //   event.preventDefault();
 
-    dispatch(await )
-  }
+  //   dispatch(await )
+  // }
 
   return (
     <form>
@@ -57,4 +57,4 @@ const Login = () => {
   );
 }
 
-export default Login;
+export default SignIn;

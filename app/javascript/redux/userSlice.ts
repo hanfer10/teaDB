@@ -15,3 +15,20 @@ export const signin = createAsyncThunk('users/signin', async (params) => {
   return response.data;
 })
 
+export const userSlice = createSlice({
+  name: 'user',
+  initialState: {
+    user: undefined,
+    status: 'idle'
+  },
+  reducers: {
+    setUser: (state, action) => action.payload
+  },
+  extraReducers: {
+
+  },
+})
+
+export const { setUser } = userSlice.actions;
+
+export default userSlice.reducer;

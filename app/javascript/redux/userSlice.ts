@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { withCsrf } from './utilities';
 
 export const signin = createAsyncThunk('users/signin', async (params) => {
-  const data = {
+  const data = withCsrf();
+  data.user = {
     username: params.username,
     password: params.password
   }
 
-  const response = await axios.post('users/sign_in', data);
+  const response = await axios.post('/users/sign_in', data);
   if (response.status != 200) {
     console.log('authentication failed');
     return undefined;
@@ -16,7 +18,7 @@ export const signin = createAsyncThunk('users/signin', async (params) => {
 })
 
 export const register = createAsyncThunk('users/register', async (params) => {
-  const data;
+  const data = withCsrf();
   data.user = {
     username: params.username,
     password: params.password,

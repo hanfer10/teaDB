@@ -15,6 +15,18 @@ export const signin = createAsyncThunk('users/signin', async (params) => {
   return response.data;
 })
 
+export const register = createAsyncThunk('users/register', async (params) => {
+  const data;
+  data.user = {
+    username: params.username,
+    password: params.password,
+    email: params.email
+  }
+
+  const response = await axios.post('/users', data);
+  return response.data;
+})
+
 export const userSlice = createSlice({
   name: 'user',
   initialState: {

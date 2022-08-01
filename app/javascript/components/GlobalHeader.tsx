@@ -6,7 +6,8 @@ const GlobalHeader = () => {
   return (
     <nav className='navbar navbar-expand bg-dark'>
       <div className='container-fluid'>
-        <Link to="/" className='navbar-brand'>teaDB</Link>
+        <Link to='/' className='navbar-brand'>teaDB</Link>
+        <Link to='/signin'>Sign In</Link>
       </div>
     </nav>
   )

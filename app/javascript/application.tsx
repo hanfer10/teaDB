@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import GlobalHeader from "./components/GlobalHeader";
 import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 const App = () => {
   return (
@@ -26,7 +27,8 @@ root.render(
       <GlobalHeader />
       <Routes>
         <Route path='/' element={<App />}>
-          <Route path="/signin" element={<SignIn />} />
+          <Route path='/signin' element={<SignIn />} />
+          <Route path='/signup' element={<SignUp />} />
         </Route>
       </Routes>
     </Provider>

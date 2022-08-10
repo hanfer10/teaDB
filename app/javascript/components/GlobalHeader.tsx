@@ -8,6 +8,7 @@ const GlobalHeader = () => {
       <div className='container-fluid'>
         <Link to='/' className='navbar-brand'>teaDB</Link>
         <Link to='/signin'>Sign In</Link>
+        <Link to='/signup'>Sign Up</Link>
       </div>
     </nav>
   )

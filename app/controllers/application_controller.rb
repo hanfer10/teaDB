@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email])
 
     devise_parameter_sanitizer.permit(:sign_in) do |user_params|
-      user_params.permit(:username, :password, :remember_me)
+      user_params.permit(:username, :password)
     end
   end
 end

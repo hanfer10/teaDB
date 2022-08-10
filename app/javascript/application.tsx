@@ -14,7 +14,6 @@ const App = () => {
   return (
     <div>
       <Outlet />
-      <p>Welcome to TeaDB</p>
     </div>
   );
 }

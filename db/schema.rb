@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_03_040800) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_10_024734) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_040800) do
     t.decimal "user_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "vendor_id", null: false
+    t.index ["vendor_id"], name: "index_favorited_teas_on_vendor_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -27,6 +29,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_040800) do
     t.string "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "vendor_id", null: false
+    t.bigint "tea_id"
+    t.index ["tea_id"], name: "index_reviews_on_tea_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["vendor_id"], name: "index_reviews_on_vendor_id"
   end
 
   create_table "teas", force: :cascade do |t|
@@ -40,6 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_040800) do
     t.string "vendor_item_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "vendor_id", null: false
+    t.index ["vendor_id"], name: "index_teas_on_vendor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,4 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_040800) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "favorited_teas", "vendors"
+  add_foreign_key "reviews", "teas"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "vendors"
+  add_foreign_key "teas", "vendors"
 end

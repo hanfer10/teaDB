@@ -4,26 +4,26 @@ import { useDispatch, useSelector } from "react-redux";
 const SignIn = () => {
   // const dispatch = useDispatch();
 
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   // const user = useSelector(state => state.user.user);
 
-  // const onChange = (event) => {
-  //   const field = event.target.name;
-  //   const value = event.target.value;
-  //   if (field == "username") {
-  //     setUsername(value)
-  //   } else if (field == "password") {
-  //     setPassword(value);
-  //   }
-  // }
+  const onChange = (event) => {
+    const field = event.target.name;
+    const value = event.target.value;
+    if (field == "username") {
+      setUsername(value)
+    } else if (field == "password") {
+      setPassword(value);
+    }
+  }
 
-  // const onSubmit = async (event) => {
-  //   event.preventDefault();
+  const onSubmit = async (event) => {
+    event.preventDefault();
 
-  //   dispatch(await )
-  // }
+    console.log(username, password);
+  }
 
   return (
     <form>
@@ -34,9 +34,9 @@ const SignIn = () => {
           id="username"
           type="text"
           className="form-control"
-          // onChange={onChange}
+          onChange={onChange}
           name="username"
-          // value={username}
+          value={username}
           placeholder="username"
         />
       </div>
@@ -47,12 +47,14 @@ const SignIn = () => {
           id="password"
           type="text"
           className="form-control"
-          // onChange={onChange}
+          onChange={onChange}
           name="password"
-          // value={password}
+          value={password}
           placeholder="password"
         />
       </div>
+
+      <button value="Sign In" onClick={onSubmit}>Sign In</button>
     </form>
   );
 }

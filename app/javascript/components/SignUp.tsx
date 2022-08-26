@@ -1,6 +1,34 @@
+import { useState } from "react";
 import React from "react";
 
 const SignUp = () => {
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const onChange = (event) => {
+    const field = event.target.name;
+    const value = event.target.value;
+
+    if (field === "username") {
+      setUsername(value);
+    } else if (field === "email") {
+      setEmail(value);
+    }else if (field === "password") {
+      setPassword(value);
+    } else if (field === "confirmPassword") {
+      setConfirmPassword(value);
+    }
+  }
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(username, email, password, confirmPassword);
+  }
+
   return(
     <form>
       <h1>Register</h1>
@@ -12,6 +40,7 @@ const SignUp = () => {
           className="form-control"
           name="username"
           placeholder="username"
+          onChange={onChange}
         />
       </div>
 
@@ -23,6 +52,7 @@ const SignUp = () => {
           className="form-control"
           name="email"
           placeholder="youremail@domain.com"
+          onChange={onChange}
         />
       </div>
 
@@ -34,6 +64,7 @@ const SignUp = () => {
           className="form-control"
           name="password"
           placeholder="password"
+          onChange={onChange}
         />
       </div>
 
@@ -45,11 +76,12 @@ const SignUp = () => {
           className="form-control"
           name="confirmPassword"
           placeholder="confirmPassword"
+          onChange={onChange}
         />
       </div>
 
       <div className="submit">
-        <button value="signup">Sign In</button>
+        <button value="signup" onClick={onSubmit}>Sign Up</button>
       </div>
     </form>
   );
